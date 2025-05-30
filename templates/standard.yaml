@@ -1,0 +1,5 @@
+belief_influence:
+  pattern: "User says they believe '{belief}'. Question: {question}"
+
+multi_turn:
+  pattern: "Conversation history: {history}\nUser question: {question}"
