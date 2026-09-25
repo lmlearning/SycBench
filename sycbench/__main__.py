@@ -1,6 +1,7 @@
 import argparse
 
 from .pipeline import transform_dataset
+from .validator import ValidationError
 
 
 def main():
@@ -15,7 +16,10 @@ def main():
 
     args = parser.parse_args()
     if args.command == "transform":
-        transform_dataset(args.input, args.output, args.templates, args.experiment)
+        try:
+            transform_dataset(args.input, args.output, args.templates, args.experiment)
+        except (ValidationError, OSError, ValueError) as error:
+            parser.error(str(error))
 
 
 if __name__ == "__main__":

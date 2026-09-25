@@ -90,6 +90,13 @@ This is a lightweight research toolkit, not a hosted leaderboard. Evaluation con
 
 ## Reliable dataset writes
 
+Transformation streams one record at a time. Every record must be a JSON object
+with a nonempty answer and all fields required by the selected template. Invalid
+records report their nonblank record number; unknown template names list the
+available choices. The command exits with status 2 on invalid input, without
+replacing an existing output file. Numeric zero and boolean false remain valid
+answers.
+
 `dump_jsonl` writes to a temporary file beside the destination and replaces the
 destination only after every record has been serialized and the file has closed.
 An interrupted input iterator, serialization error or failed replacement leaves an
