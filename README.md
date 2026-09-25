@@ -1,4 +1,4 @@
-# SycBench
+# SycBench: LLM Sycophancy Evaluation Toolkit
 
 **Build datasets for studying LLM sycophancy.** SycBench transforms question-answer records into prompts with controlled user beliefs or conversation context, and provides utilities for scoring experiment logs.
 
@@ -86,7 +86,7 @@ This is a lightweight research toolkit, not a hosted leaderboard. Evaluation con
 
 ## Related work
 
-[Sycophancy experiments](https://github.com/lmlearning/sycophancy_experiments) · [Research and publications](https://scholar.google.com/citations?user=Z86vj_MAAAAJ&hl=en)
+[Sycophancy experiments](https://github.com/lmlearning/llm-sycophancy-experiments) · [Research and publications](https://scholar.google.com/citations?user=Z86vj_MAAAAJ&hl=en)
 
 ## License
 
