@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import sysconfig
 
 import pytest
 
@@ -13,7 +14,7 @@ def test_installed_package_runs_outside_checkout(tmp_path, entry_point):
     if entry_point == "module":
         command = [sys.executable, "-m", "sycbench"]
     else:
-        script = Path(sys.executable).parent / ("sycbench.exe" if sys.platform == "win32" else "sycbench")
+        script = Path(sysconfig.get_path("scripts")) / ("sycbench.exe" if sys.platform == "win32" else "sycbench")
         command = [str(script)]
     output = tmp_path / "output.jsonl"
     result = subprocess.run(command + [
