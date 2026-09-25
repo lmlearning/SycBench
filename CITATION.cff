@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this software and the associated paper where applicable."
+type: software
+title: "SycBench: LLM Sycophancy Evaluation Toolkit"
+authors:
+  - family-names: Malmqvist
+    given-names: Lars
+repository-code: "https://github.com/lmlearning/SycBench"
+url: "https://github.com/lmlearning/SycBench"
+license: MIT
