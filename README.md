@@ -88,6 +88,16 @@ This is a lightweight research toolkit, not a hosted leaderboard. Evaluation con
 
 [Sycophancy experiments](https://github.com/lmlearning/llm-sycophancy-experiments) · [Research and publications](https://scholar.google.com/citations?user=Z86vj_MAAAAJ&hl=en)
 
+## Reliable dataset writes
+
+`dump_jsonl` writes to a temporary file beside the destination and replaces the
+destination only after every record has been serialized and the file has closed.
+An interrupted input iterator, serialization error or failed replacement leaves an
+existing destination unchanged; temporary files are cleaned up. Empty input still
+produces an empty file. This provides atomic replacement on supported filesystems,
+not power-loss durability or coordination between concurrent writers. Replacement
+creates a new file and does not preserve the destination's original permissions.
+
 ## License
 
 See [LICENSE](LICENSE).
